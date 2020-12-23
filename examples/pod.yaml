@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ecr-public-authenticated-access-example
+  namespace: default
+spec:
+  containers:
+  - name: my-container
+    image: public.ecr.aws/r6p5x8p7/everlasting-hey-yo:latest
+  # Use the Kubernetes secret which created by ecr-public-creds-helper-for-k8s
+  imagePullSecrets:
+  - name: ecr-public-token
