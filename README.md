@@ -4,7 +4,7 @@
 
 [license]: https://github.com/toricls/ecr-public-creds-helper-for-k8s/blob/master/LICENSE
 
-Amazon ECR "Public" credentials helper for Kubernetes (`ecr-public-creds-helper-for-k8s` for short) allows pods in your Kubernetes cluster pull public container images from [Amazon ECR Public](https://aws.amazon.com/blogs/aws/amazon-ecr-public-a-new-public-container-registry/) registries **as authenticated users** to get the limit upgraded to `10` pulls per second which is `1` for unauthenticated users as described [here](https://docs.aws.amazon.com/AmazonECR/latest/public/public-service-quotas.html).
+Amazon ECR "Public" credentials helper for Kubernetes (`ecr-public-creds-helper-for-k8s` for short) allows pods in your Kubernetes cluster pull public container images from [Amazon ECR Public](https://aws.amazon.com/blogs/aws/amazon-ecr-public-a-new-public-container-registry/) registries **as authenticated users** to get the limit upgraded to `10` pulls per second which is `1` for unauthenticated users as described [here](https://docs.aws.amazon.com/AmazonECR/latest/public/public-service-quotas.html) or unlimited bandwidth as described [here](https://aws.amazon.com/ecr/pricing/).
 
 `ecr-public-creds-helper-for-k8s` will run in your cluster as a Kubernetes CronJob every 8 hours by default. It authenticates against ECR Public and stores the auth token as Kubernetes Secrets within namespaces you specified.
 
