@@ -8,7 +8,7 @@ Amazon ECR "Public" credentials helper for Kubernetes (`ecr-public-creds-helper-
 
 `ecr-public-creds-helper-for-k8s` will run in your cluster as a Kubernetes CronJob every 8 hours by default. It authenticates against ECR Public and stores the auth token as Kubernetes Secrets within namespaces you specified.
 
-Each pod will reference that Kubernetes Secret in its namespace by specifying the `imagePullSecrets` field in PodSpec to reference that Kubernetes Secret. You may also want to patch the `default` service account in each namespace to avoid writing `imagePullSecrets` in all PodSpecs, see comments in the [entrypoint.sh](entrypoint.sh) file for further details.
+Each pod (even on AWS Fargate) will reference that Kubernetes Secret in its namespace by specifying the `imagePullSecrets` field in PodSpec to reference that Kubernetes Secret. You may also want to patch the `default` service account in each namespace to avoid writing `imagePullSecrets` in all PodSpecs, see comments in the [entrypoint.sh](entrypoint.sh) file for further details.
 
 ## Installation
 
